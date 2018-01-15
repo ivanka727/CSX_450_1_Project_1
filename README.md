@@ -69,6 +69,9 @@
 2. Go back to Bash shell, run “docker exec container ID jupyter notebook list” to get the token
 3. Copy the token and put it back into the browser “Password or token” part, then login. 
 
+## VIII. Diagram
+
+
 ## IX. A detailed budget of the costs of running a Jupyter Data Science Notebook Server for three months using at least three different kinds of EC 2 instances.
 - Assume we’re using 30GB storage with Linux per month in Oregon Region.
  1. Instance Type 1: t2.small, usage rate is $0.023 per hour, data transfer rate is $0.09/GB. Total rate for 3 months = rate/hour * hours/day * days/month * total months + data transfer rate * 30GB = $0.023 * 24 * 30 * 3 + $0.09 * 30 = $52.38
