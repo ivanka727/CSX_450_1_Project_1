@@ -70,7 +70,7 @@
 3. Copy the token and put it back into the browser “Password or token” part, then login. 
 
 ## VIII. Diagram
-
+![my image](https://github.com/lssnadia/CSX_450_1_Project_1/blob/master/Launch%20Jupyter%20Diagram.001.jpeg)
 
 ## IX. A detailed budget of the costs of running a Jupyter Data Science Notebook Server for three months using at least three different kinds of EC 2 instances.
 - Assume we’re using 30GB storage with Linux per month in Oregon Region.
