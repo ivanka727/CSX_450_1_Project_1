@@ -11,6 +11,9 @@
 9. Hit “enter” 
 10. Save it into the default location without adding a passphrase 
 11. Hit “enter” twice, you’ll see 2 files “id_rsa” and “id_rsa.pub” saved in “ssh” folder. 
+
+![my image](https://github.com/lssnadia/CSX_450_1_Project_1/blob/master/Screen%20Shot%202018-01-13%20at%209.10.27%20PM.png)
+
 12. Retrieve the content from “id_rsa.pub”
 13. Type “cat ~/.ssh/id_rsa.pub”, hit “enter”
 14. You’ll see the key in the shell
@@ -22,6 +25,8 @@
 20. Paste the key to “Public Key Contents” 
 21. Click “Import”. (See below screenshot)
 
+![my image](https://github.com/lssnadia/CSX_450_1_Project_1/blob/master/Screen%20Shot%202018-01-13%20at%209.44.43%20PM.png)
+
 ## II. Security Groups
 1. Go back to EC2 Dashboard
 2. Select “ Security Groups”
@@ -30,6 +35,8 @@
 5. Select “SSH” under “Type” and select “anywhere” under “Source” 
 6. Add another rule, select “HTTP” under “Type” and select “anywhere” under “Source”.
 7. Name the Security Group --- Add “Description” --- Click “Create”. (See below screenshot)
+
+![my image](https://github.com/lssnadia/CSX_450_1_Project_1/blob/master/Screen%20Shot%202018-01-13%20at%2010.14.22%20PM.png)
 
 ## III. AWS Operating System
 1. Go back to AWS Dashboard
@@ -45,12 +52,17 @@
 11. Launch Instances and view Instances.
 12. Name the instance, check the inbound rules and make sure ports 80 and 22 are there. You’ll also see a generated IP address.
 
+![my image](https://github.com/lssnadia/CSX_450_1_Project_1/blob/master/Screen%20Shot%202018-01-13%20at%2011.09.47%20PM.png)
+
 ## IV. Docker Installation
 1. Copy the public IP Address from the instance.
 2. Go back to Bash Shell
 3. Type “ssh ubuntu@IP address”
 4. Click “enter”, then connect (type “yes”)
 5. Type “curl -sSL https://get.docker.com | sh” to start downloading and installing docker. 
+
+![my image](https://github.com/lssnadia/CSX_450_1_Project_1/blob/master/Screen%20Shot%202018-01-13%20at%2011.27.48%20PM.png)
+
 6. Add our user to the docker group, copy and paste the text from above red box and run it. Type “exit” to logout and log back in. Then we’ll have docker installed.
 
 ## V. Obtaining the correct Docker image
