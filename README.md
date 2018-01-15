@@ -43,30 +43,36 @@
 9. Review and Launch, you can disregard the warning. If everything looks good, then click “Launch”.
 10. Choose an existing key pair, select the one you just created
 11. Launch Instances and view Instances.
-12. Name the instance, check the inbound rules and make sure ports 80 and 22 are there. You’ll also see a generated IP address. 
+12. Name the instance, check the inbound rules and make sure ports 80 and 22 are there. You’ll also see a generated IP address.
 
-
-Docker Installation
-Copy the public IP Address from the instance.
-Go back to Bash Shell --- Type “ssh ubuntu@IP address” --- Click “enter”, then connect (type “yes”) .
-Type “curl -sSL https://get.docker.com | sh” to start downloading and installing docker. 
+## IV. Docker Installation
+1. Copy the public IP Address from the instance.
+2. Go back to Bash Shell
+3. Type “ssh ubuntu@IP address”
+4. Click “enter”, then connect (type “yes”)
+5. Type “curl -sSL https://get.docker.com | sh” to start downloading and installing docker. 
+6. Add our user to the docker group, copy and paste the text from above red box and run it. Type “exit” to logout and log back in. Then we’ll have docker installed.
 
-4) Add our user to the docker group, copy and paste the text from above red box and run it. Type “exit” to logout and log back in. Then we’ll have docker installed.
-Obtaining the correct Docker image
-Launch Jupyter notebook server --- Verify the docker works fine --- Type “docker pull jupyter/datascience-notebook” to pull the image.
-Type “docker images” to verify the image has been pulled out correctly.
-To give the name a shorter tag, type “docker tag image ID dsnb” to tag it as “dsnb”.
-Running the correct Docker image as a container
-Continue with step 5, run this image by typing “docker run -v /home/ubuntu:/home/jovyan -p 80:8888 -d dsnb” to obtain the container ID.
- Type “docker ps” to see the container.
-Jupyter notebook security concerns
-Continue with step 6. Open the browser, put IP address in, connect with Jupyter notebook server.
-Go back to Bash shell, run “docker exec container ID jupyter notebook list” to get the token
-Copy the token and put it back into the browser “Password or token” part, then login. 
-A detailed budget of the costs of running a Jupyter Data Science Notebook Server for three months using at least three different kinds of EC 2 instances.
-Assume we’re using 30GB storage with Linux per month in Oregon Region.
-Instance Type 1: t2.small, usage rate is $0.023 per hour, data transfer rate is $0.09/GB. Total rate for 3 months = rate/hour * hours/day * days/month * total months + data transfer rate * 30GB = $0.023*24*30*3+$0.09*30 = $52.38
-Instance Type 2: t2.medium, usage rate is $0.0464 per hour, data transfer rate is $0.09/GB. Total rate for 3 months = rate/hour * hours/day * days/month * total months + data transfer rate * 30GB = $0.0464*24*30*3+$0.09*30 = $102.924
-Instance Type 3: m5.large, usage rate is $0.096 per hour, data transfer rate is $0.09/GB. Total rate for 3 months = rate/hour * hours/day * days/month * total months + data transfer rate * 30GB = $0.096*24*30*3+$0.09*30 = $210.06
-Total cost = Instance type 1 cost + Instance type 2 cost + Instance type 3 cost = $52.38+$102.924+$210.06 = $365.364
+## V. Obtaining the correct Docker image
+1. Launch Jupyter notebook server
+2. Verify the docker works fine
+3. Type “docker pull jupyter/datascience-notebook” to pull the image.
+4. Type “docker images” to verify the image has been pulled out correctly.
+5. To give the name a shorter tag, type “docker tag image ID dsnb” to tag it as “dsnb”.
+
+## VI. Running the correct Docker image as a container
+1. Run this image by typing “docker run -v /home/ubuntu:/home/jovyan -p 80:8888 -d dsnb” to obtain the container ID. 
+2. Type “docker ps” to see the container.
+
+## VII. Jupyter notebook security concerns
+1. Open the browser, put IP address in, connect with Jupyter notebook server.
+2. Go back to Bash shell, run “docker exec container ID jupyter notebook list” to get the token
+3. Copy the token and put it back into the browser “Password or token” part, then login. 
+
+## IX A detailed budget of the costs of running a Jupyter Data Science Notebook Server for three months using at least three different kinds of EC 2 instances.
+- Assume we’re using 30GB storage with Linux per month in Oregon Region.
+  1. Instance Type 1: t2.small, usage rate is $0.023 per hour, data transfer rate is $0.09/GB. Total rate for 3 months = rate/hour * hours/day * days/month * total months + data transfer rate * 30GB = $0.023*24*30*3+$0.09*30 = $52.38
+  2. Instance Type 2: t2.medium, usage rate is $0.0464 per hour, data transfer rate is $0.09/GB. Total rate for 3 months = rate/hour * hours/day * days/month * total months + data transfer rate * 30GB = $0.0464*24*30*3+$0.09*30 = $102.924
+  3. Instance Type 3: m5.large, usage rate is $0.096 per hour, data transfer rate is $0.09/GB. Total rate for 3 months = rate/hour * hours/day * days/month * total months + data transfer rate * 30GB = $0.096*24*30*3+$0.09*30 = $210.06
+- Total cost = Instance type 1 cost + Instance type 2 cost + Instance type 3 cost = $52.38+$102.924+$210.06 = $365.364
 	
